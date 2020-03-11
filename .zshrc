@@ -37,13 +37,14 @@ if [ "$TERM" != "linux" ]; then
 fi
 # end powerline-shell stuff
 
-# key bindings
+# key bindings, you can find keybind by running cat and typing what you want, then copying the codes output by cat
 bindkey '^R' history-incremental-search-backward
 bindkey '^\b' backward-kill-word
 bindkey '^[[1;5D' vi-backward-word
 bindkey '^[[1;5C' vi-forward-word
-bindkey '^[[~' vi-forward-delete-char
-bindkey '^[[D' vi-digit-or-beginning-of-line
+bindkey '^[[3~' vi-delete-char
+bindkey '^[[H' vi-digit-or-beginning-of-line
+bindkey '^[[F' vi-end-of-line
 
 # opt setting
 setopt correct
