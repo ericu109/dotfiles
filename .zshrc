@@ -22,6 +22,7 @@ function powerline_precmd() {
     PS1="$(powerline-shell --shell zsh $?)"
 }
 
+# powerline-shell stuff
 function install_powerline_precmd() {
   for s in "${precmd_functions[@]}"; do
     if [ "$s" = "powerline_precmd" ]; then
@@ -34,5 +35,11 @@ function install_powerline_precmd() {
 if [ "$TERM" != "linux" ]; then
     install_powerline_precmd
 fi
+# end powerline-shell stuff
 
+# key bindings
 bindkey '^R' history-incremental-search-backward
+bindkey '^\b' backward-kill-word
+
+# opt setting
+setopt correct
