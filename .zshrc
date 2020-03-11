@@ -34,3 +34,5 @@ function install_powerline_precmd() {
 if [ "$TERM" != "linux" ]; then
     install_powerline_precmd
 fi
+
+bindkey '^R' history-incremental-search-backward
