@@ -40,6 +40,12 @@ fi
 # key bindings
 bindkey '^R' history-incremental-search-backward
 bindkey '^\b' backward-kill-word
+bindkey '^[[1;5D' vi-backward-word
+bindkey '^[[1;5C' vi-forward-word
+bindkey '^[[~' vi-forward-delete-char
+bindkey '^[[D' vi-digit-or-beginning-of-line
 
 # opt setting
 setopt correct
+
+neofetch
