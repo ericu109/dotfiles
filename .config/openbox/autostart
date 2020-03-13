@@ -21,4 +21,5 @@ pasystray &
 insync &
 discord &
 polychromatic-tray-applet &
-xset s noblank -dpms
+xset s noblank -dpms &
+variety
