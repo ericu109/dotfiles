@@ -231,6 +231,26 @@
       <action name="FocusToBottom"/>
       <action name="Unfocus"/>
     </keybind>
+    <keybind key="W-Right">
+      <action name="MoveResizeTo">
+        <width>50%</width>
+        <height>100%</height>
+        <x>-0</x>
+      </action>
+    </keybind>
+    <keybind key="W-Left">
+      <action name="MoveResizeTo">
+        <width>50%</width>
+        <height>100%</height>
+        <x>0</x>
+      </action>
+    </keybind>
+    <keybind key="W-Up">
+      <action name="ToggleMaximize"/>
+    </keybind>
+    <keybind key="W-Down">
+      <action name="Iconify"/>
+    </keybind>
     <keybind key="A-space">
       <action name="ShowMenu">
         <menu>client-menu</menu>
@@ -239,6 +259,7 @@
     <!-- Keybindings for window switching -->
     <keybind key="A-Tab">
       <action name="NextWindow">
+        <raise>yes</raise>
         <finalactions>
           <action name="Focus"/>
           <action name="Raise"/>
@@ -248,17 +269,7 @@
     </keybind>
     <keybind key="A-S-Tab">
       <action name="PreviousWindow">
-        <finalactions>
-          <action name="Focus"/>
-          <action name="Raise"/>
-          <action name="Unshade"/>
-        </finalactions>
-      </action>
-    </keybind>
-    <keybind key="C-A-Tab">
-      <action name="NextWindow">
-        <panels>yes</panels>
-        <desktop>yes</desktop>
+        <raise>yes</raise>
         <finalactions>
           <action name="Focus"/>
           <action name="Raise"/>
@@ -267,7 +278,7 @@
       </action>
     </keybind>
     <!-- Keybindings for window switching with the arrow keys -->
-    <keybind key="W-S-Right">
+    <!-- <keybind key="W-S-Right">
       <action name="DirectionalCycleWindows">
         <direction>right</direction>
       </action>
@@ -286,7 +297,7 @@
       <action name="DirectionalCycleWindows">
         <direction>down</direction>
       </action>
-    </keybind>
+    </keybind> -->
     <!-- Keybindings for running applications -->
     <keybind key="W-r">
       <action name="Execute">
