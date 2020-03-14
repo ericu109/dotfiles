@@ -235,23 +235,57 @@
       <action name="Unmaximize"/>
       <action name="MoveResizeTo">
         <width>50%</width>
-        <height>100%</height>
         <x>-0</x>
+      </action>
+      <action name="Maximize">
+        <direction>vertical</direction>
       </action>
     </keybind>
     <keybind key="W-Left">
       <action name="Unmaximize"/>
       <action name="MoveResizeTo">
         <width>50%</width>
-        <height>100%</height>
         <x>0</x>
+      </action>
+      <action name="Maximize">
+        <direction>vertical</direction>
       </action>
     </keybind>
     <keybind key="W-Up">
-      <action name="ToggleMaximize"/>
+      <action name="If">
+        <query target="default">
+          <maximizedvertical>yes</maximizedvertical>
+        </query>
+        <then>
+          <action name="Unmaximize"/>
+          <action name="MoveResizeTo">
+            <width>50%</width>
+            <height>50%</height>
+            <y>0</y>
+          </action>
+        </then>
+        <else>
+          <action name="ToggleMaximize"/>
+        </else>
+      </action>
     </keybind>
     <keybind key="W-Down">
-      <action name="Iconify"/>
+      <action name="If">
+        <query target="default">
+          <maximizedvertical>yes</maximizedvertical>
+        </query>
+        <then>
+          <action name="Unmaximize"/>
+          <action name="MoveResizeTo">
+            <width>50%</width>
+            <height>50%</height>
+            <y>50%</y>
+          </action>
+        </then>
+        <else>
+          <action name="ToggleMaximize"/>
+        </else>
+      </action>
     </keybind>
     <keybind key="A-space">
       <action name="ShowMenu">
