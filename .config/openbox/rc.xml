@@ -179,70 +179,42 @@
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
     <!-- Keybindings for desktop switching -->
-    <keybind key="C-A-Left">
-      <action name="GoToDesktop">
-        <to>left</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="C-A-Right">
-      <action name="GoToDesktop">
-        <to>right</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="C-A-Up">
-      <action name="GoToDesktop">
-        <to>up</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="C-A-Down">
-      <action name="GoToDesktop">
-        <to>down</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="S-A-Left">
+    <keybind key="W-S-1">
       <action name="SendToDesktop">
-        <to>left</to>
-        <wrap>no</wrap>
+        <to>1</to>
       </action>
     </keybind>
-    <keybind key="S-A-Right">
+    <keybind key="W-S-2">
       <action name="SendToDesktop">
-        <to>right</to>
-        <wrap>no</wrap>
+        <to>2</to>
       </action>
     </keybind>
-    <keybind key="S-A-Up">
+    <keybind key="W-S-3">
       <action name="SendToDesktop">
-        <to>up</to>
-        <wrap>no</wrap>
+        <to>3</to>
       </action>
     </keybind>
-    <keybind key="S-A-Down">
+    <keybind key="W-S-4">
       <action name="SendToDesktop">
-        <to>down</to>
-        <wrap>no</wrap>
+        <to>4</to>
       </action>
     </keybind>
-    <keybind key="W-F1">
+    <keybind key="W-1">
       <action name="GoToDesktop">
         <to>1</to>
       </action>
     </keybind>
-    <keybind key="W-F2">
+    <keybind key="W-2">
       <action name="GoToDesktop">
         <to>2</to>
       </action>
     </keybind>
-    <keybind key="W-F3">
+    <keybind key="W-3">
       <action name="GoToDesktop">
         <to>3</to>
       </action>
     </keybind>
-    <keybind key="W-F4">
+    <keybind key="W-4">
       <action name="GoToDesktop">
         <to>4</to>
       </action>
