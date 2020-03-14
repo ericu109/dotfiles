@@ -353,6 +353,11 @@
         <command>nemo</command>
       </action>
     </keybind>
+    <keybind key="C-Print">
+      <action name="Execute">
+        <command>flameshot gui</command>
+      </action>
+    </keybind>
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>

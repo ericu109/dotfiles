@@ -5,23 +5,7 @@
 <menu id="apps-accessories-menu" label="Accessories">
   <item label="Calculator">
     <action name="Execute">
-      <command>gnome-calculator</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
-  <item label="Character Map">
-    <action name="Execute">
-      <command>gnome-character-map</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
-  <item label="Ark File Archiver">
-    <action name="Execute">
-      <command>ark</command>
+      <command>galculator</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
@@ -30,43 +14,34 @@
 </menu>
 
 <menu id="apps-editors-menu" label="Editors">
-  <item label="GVim">
+  <item label="Visual Studio Code - OSS">
     <action name="Execute">
-      <command>gvim</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-        <wmclass>GVim</wmclass>
-      </startupnotify>
-    </action>
-  </item>
-  <item label="Emacs">
-    <action name="Execute">
-      <command>emacs</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-        <wmclass>Emacs</wmclass>
-      </startupnotify>
-    </action>
-  </item>
-  <item label="GEdit">
-    <action name="Execute">
-      <command>gedit</command>
+      <command>code</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
     </action>
   </item>
-  <item label="Kate">
+  <item label="Rider">
     <action name="Execute">
-      <command>kate</command>
+      <command>rider</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
     </action>
   </item>
-  <item label="Kwrite">
+  <item label="Datagrip">
     <action name="Execute">
-      <command>kwrite</command>
+      <command>datagrip</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <separator />
+  <item label="GIMP">
+    <action name="Execute">
+      <command>gimp</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
@@ -165,41 +140,6 @@
   </item>
 </menu>
 
-<menu id="apps-graphics-menu" label="Graphics">
-  <item label="Gimp">
-    <action name="Execute">
-      <command>gimp</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
-  <item label="Gwenview">
-    <action name="Execute">
-      <command>gwenview</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
-  <item label="Dia Diagram Editor">
-    <action name="Execute">
-      <command>dia</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
-  <item label="Inkscape">
-    <action name="Execute">
-      <command>inkscape</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
-</menu>
-
 <menu id="system-menu" label="System">
   <item label="Openbox Configuration Manager">
     <action name="Execute">
@@ -218,7 +158,6 @@
   <menu id="apps-accessories-menu"/>
   <menu id="apps-gaming-menu"/>
   <menu id="apps-editors-menu"/>
-  <menu id="apps-graphics-menu"/>
   <menu id="apps-net-menu"/>
   <menu id="apps-office-menu"/>
   <menu id="apps-term-menu"/>
