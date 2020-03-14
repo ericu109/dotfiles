@@ -232,6 +232,7 @@
       <action name="Unfocus"/>
     </keybind>
     <keybind key="W-Right">
+      <action name="Unmaximize"/>
       <action name="MoveResizeTo">
         <width>50%</width>
         <height>100%</height>
@@ -239,6 +240,7 @@
       </action>
     </keybind>
     <keybind key="W-Left">
+      <action name="Unmaximize"/>
       <action name="MoveResizeTo">
         <width>50%</width>
         <height>100%</height>
