@@ -49,4 +49,7 @@ bindkey '^[[F' vi-end-of-line
 # opt setting
 setopt correct
 
+# additionall paths
+export PATH="$PATH:$HOME/.dotnet/tools/"
+
 neofetch
