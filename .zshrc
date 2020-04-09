@@ -49,7 +49,9 @@ bindkey '^[[F' vi-end-of-line
 # opt setting
 setopt correct
 
-# additionall paths
+# additional paths
 export PATH="$PATH:$HOME/.dotnet/tools/"
+export LIBVIRT_DEFAULT_URI="qemu:///system"
+export EDITOR="vim"
 
 neofetch
