@@ -17,6 +17,7 @@ bindkey -v
 
 alias ls='ls --color=auto'
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' 
+alias vim='nvim'
 
 function powerline_precmd() {
     PS1="$(powerline-shell --shell zsh $?)"
@@ -52,6 +53,6 @@ setopt correct
 # additional paths
 export PATH="$PATH:$HOME/.dotnet/tools/"
 export LIBVIRT_DEFAULT_URI="qemu:///system"
-export EDITOR="vim"
+export EDITOR="nvim"
 
 neofetch
