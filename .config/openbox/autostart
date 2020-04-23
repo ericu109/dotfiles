@@ -22,4 +22,5 @@ insync &
 discord &
 polychromatic-tray-applet &
 xset s noblank -dpms &
-variety
+variety &
+redshift-gtk
