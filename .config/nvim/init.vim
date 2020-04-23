@@ -15,6 +15,7 @@ set undodir=~/.config/nvim/undodir
 set undofile
 set incsearch
 set colorcolumn=80
+set termguicolors
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 set list
@@ -31,6 +32,7 @@ Plug 'mbbill/undotree'
 Plug 'kien/ctrlp.vim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'morhetz/gruvbox'
+Plug 'norcalli/nvim-colorizer.lua'
 
 call plug#end()
 
@@ -45,6 +47,10 @@ let mapleader = " "
 
 colorscheme codedark
 
+" Plugin setup stuff
+lua require'colorizer'.setup()
+
+" shortcut remaps
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
