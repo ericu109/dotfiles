@@ -1,53 +1,56 @@
-syntax on
+syntax on " Turns syntax highlighting on
 
-set noerrorbells
-set tabstop=3
-set softtabstop=3
-set shiftwidth=4
-set expandtab
-set smartindent
-set nu
-set nowrap
+" Tab/spacing stuff
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab " inserts spaces instead of tabs when tab is pressed
+
+set smartindent " Turns smart indenting on
+set number " Turns line numbers on
+set nowrap " allows lines to extend for unlimited columns
+
+" ignores case in searches until a capital letter is in the search clause
+set ignorecase
 set smartcase
-set noswapfile
-set nobackup
-set undodir=~/.config/nvim/undodir
+
+set noswapfile " turns off swap files when leaving vim without saving
+set nobackup " turns off backup files before overwriting
+
+" turn undo files on and set the directory for them
 set undofile
-set incsearch
+set undodir=~/.vim/undodir
+
+set incsearch " Highlight search results as you're searching
+set termguicolors " Enables gui colors in the terminal
+
+" Vertical line at 80 chars, and the color of that line
 set colorcolumn=80
-set termguicolors
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
+" Show spaces and tabs as visible characters
 set list
-set listchars=space:•
+set listchars=space:•,tab:»\ 
 
+" Turn the spell-checker on
 set spell
-
-call plug#begin('~/.vim/plugged')
-
-Plug 'mbbil/undotree'
-Plug 'jremmen/vim-ripgrep'
-Plug 'leafgarland/typescript-vim'
-Plug 'mbbill/undotree'
-Plug 'kien/ctrlp.vim'
-Plug 'tomasiser/vim-code-dark'
-Plug 'morhetz/gruvbox'
-Plug 'norcalli/nvim-colorizer.lua'
-
-call plug#end()
-
-if executable('rg')
-    let g:rg_derive_root='true'
-endif
-
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-let g:ctrlp_use_caching = 0
 
 let mapleader = " "
 
-colorscheme codedark
+" Plugins
+call plug#begin('~/.vim/plugged')
 
-" Plugin setup stuff
+Plug 'mbbill/undotree' " undo tree viewer
+Plug 'tomasiser/vim-code-dark' " color scheme that looks like vs
+Plug 'norcalli/nvim-colorizer.lua' " background color for hex colors
+Plug 'sheerun/vim-polyglot' " large set of syntax highlighting stuff
+Plug 'jiangmiao/auto-pairs' " auto pairs brackets and such
+
+call plug#end()
+
+colorscheme codedark " sets the color scheme to vim-code-dark
+
+" Turn on the colorizer plugin
 lua require'colorizer'.setup()
 
 " shortcut remaps
@@ -55,4 +58,8 @@ nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
+
+" Rebind the undo tree to space-u
 nnoremap <leader>u :UndotreeShow <CR>
+
+autocmd Filetype vim let b:AutoPairs = {} " Disables autopairs in .vim files
