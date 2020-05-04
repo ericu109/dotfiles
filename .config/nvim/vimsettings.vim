@@ -36,4 +36,8 @@ set listchars=space:•,tab:»\
 " Turn the spell-checker on
 set spell
 
+" Keeps the cursor in the middle of the screen, except for beginning and end
+" of files.
+set scrolloff=9999
+
 let mapleader = " "

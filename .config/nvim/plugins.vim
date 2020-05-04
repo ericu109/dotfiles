@@ -13,3 +13,16 @@ call plug#end()
 
 " Turn on the colorizer plugin
 lua require'colorizer'.setup()
+
+" Rebind the undo tree to space-u
+nnoremap <leader>u :UndotreeShow <CR>
+
+if executable('rg')
+    let g:rg_derive_root='true'
+endif
+
+" For searching for files and in files
+nnoremap <Leader>ps :Rg<SPACE>
+" For searching for files that are tracked by git, so like, switching between
+" project files and what not
+nnoremap <Leader>pf :GFiles<CR>
