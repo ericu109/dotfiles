@@ -7,6 +7,7 @@ Plug 'sheerun/vim-polyglot' " large set of syntax highlighting stuff
 Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'neoclide/coc.nvim', {'branch':'release'}
 
 call plug#end()
 
