@@ -18,5 +18,8 @@ nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 
-autocmd Filetype vim let b:AutoPairs = {} " Disables autopairs in .vim files
+" remap ctrl-backspace to delete word
+noremap! <C-BS> <C-w>
+noremap! <C-h> <C-w>
+
 autocmd BufWritePre * :call TrimWhitespace() " Auto trims whitespace on write
