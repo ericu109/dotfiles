@@ -21,5 +21,7 @@ nnoremap <leader>l :wincmd l<CR>
 " remap ctrl-backspace to delete word
 noremap! <C-BS> <C-w>
 noremap! <C-h> <C-w>
+" Ctrl-a is select all in visual mode
+map <C-a> <esc>ggVG<CR>
 
 autocmd BufWritePre * :call TrimWhitespace() " Auto trims whitespace on write

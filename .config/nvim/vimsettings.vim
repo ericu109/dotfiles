@@ -22,6 +22,7 @@ set incsearch " Highlight search results as you're searching
 set termguicolors " Enables gui colors in the terminal
 set noswapfile " turns off swap files when leaving vim without saving
 set nobackup " turns off backup files before overwriting
+set nowritebackup
 set updatetime=50 " 50ms for cursor hold event / swap-file save, if it was enabled.
 set cmdheight=2 " gives two lines for command line at bottom
 
@@ -39,5 +40,10 @@ set spell
 " Keeps the cursor in the middle of the screen, except for beginning and end
 " of files.
 set scrolloff=9999
+" Always show the sign column, otherwise it could shift text each time
+" diagnostics appear/are resolved
+set signcolumn=yes
+" don't pass messages to |ins-completion-menu|
+set shortmess+=c
 
 let mapleader = " "
