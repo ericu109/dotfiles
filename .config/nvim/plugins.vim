@@ -8,6 +8,7 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch':'release'}
+Plug 'OmniSharp/omnisharp-vim'
 
 call plug#end()
 
@@ -27,6 +28,18 @@ nnoremap <Leader>ps :Rg<SPACE>
 " project files and what not
 nnoremap <Leader>pf :GFiles<CR>
 
+
+""""""""""""""""""""""""""""""
+" OmniSharp stuff
+""""""""""""""""""""""""""""""
+filetype indent plugin on
+let g:OmniSharp_server_stdio = 1
+let g:OmniSharp_timeout = 5
+let g:OmniSharp_highlight_types = 3
+let g:omnicomplete_fetch_full_documentation = 1
+let g:OmniSharp_typeLookupInPreview = 1
+"let g:OmniSharp_want_snippet=1
+set completeopt+=longest,menuone,preview
 """"""""""""""""""""""""""""""
 " coc stuff
 """"""""""""""""""""""""""""""
