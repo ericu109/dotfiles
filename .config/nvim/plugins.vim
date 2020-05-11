@@ -96,3 +96,4 @@ autocmd FileType cs nnoremap <silent> K :OmniSharpDocumentation<CR>
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
+let g:coc_snippet_next = '<tab>'
