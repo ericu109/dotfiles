@@ -40,6 +40,7 @@ let g:omnicomplete_fetch_full_documentation = 1
 let g:OmniSharp_typeLookupInPreview = 1
 "let g:OmniSharp_want_snippet=1
 set completeopt+=longest,menuone,preview
+
 """"""""""""""""""""""""""""""
 " coc stuff
 """"""""""""""""""""""""""""""
@@ -88,6 +89,8 @@ endfunction
 
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
+" K shows documentation in cs files
+autocmd FileType cs nnoremap <silent> K :OmniSharpDocumentation<CR>
 
 " Formatting selected code.
 xmap <leader>f  <Plug>(coc-format-selected)
