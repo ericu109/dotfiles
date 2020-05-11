@@ -16,8 +16,10 @@ bindkey -v
 # End of lines configured by zsh-newuser-install
 
 alias ls='ls --color=auto'
-alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' 
+alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias vim='nvim'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 
 function powerline_precmd() {
     PS1="$(powerline-shell --shell zsh $?)"
