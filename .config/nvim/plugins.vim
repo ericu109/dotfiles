@@ -9,6 +9,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch':'release'}
 Plug 'OmniSharp/omnisharp-vim'
+Plug 'shime/vim-livedown'
 
 call plug#end()
 
@@ -28,6 +29,10 @@ nnoremap <Leader>ps :Rg<SPACE>
 " project files and what not
 nnoremap <Leader>pf :GFiles<CR>
 
+""""""""""""""""""""""""""""""
+" livedown (markdown plugin)
+""""""""""""""""""""""""""""""
+let g:livedown_browser = "firefox-developer-edition"
 
 """"""""""""""""""""""""""""""
 " OmniSharp stuff
@@ -95,5 +100,7 @@ autocmd FileType cs nnoremap <silent> K :OmniSharpDocumentation<CR>
 " Formatting selected code.
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
+" markdown server toggle
+nmap gm :LivedownToggle<CR>
 
 let g:coc_snippet_next = '<tab>'
