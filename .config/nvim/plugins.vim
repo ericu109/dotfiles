@@ -27,7 +27,9 @@ endif
 nnoremap <Leader>ps :Rg<SPACE>
 " For searching for files that are tracked by git, so like, switching between
 " project files and what not
-nnoremap <Leader>pf :GFiles<CR>
+" For searching for files that can be tracked by git (tracked and untracked),
+" switching between project files and what not (comes from fzf.vim)
+nnoremap <Leader>pf :GFiles?<CR>
 
 """"""""""""""""""""""""""""""
 " livedown (markdown plugin)
