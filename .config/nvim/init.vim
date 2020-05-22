@@ -18,6 +18,9 @@ nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 
+" open the file explorer as a left bar
+nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
+
 " remap ctrl-backspace to delete word
 noremap! <C-BS> <C-w>
 noremap! <C-h> <C-w>

@@ -14,6 +14,9 @@ set nowrap " allows lines to extend for unlimited columns
 set ignorecase
 set smartcase
 
+" don't show the banner for netrw
+let g:netrw_banner = 0
+
 " turn undo files on and set the directory for them
 set undofile
 set undodir=~/.vim/undodir
