@@ -16,6 +16,8 @@ set smartcase
 
 " don't show the banner for netrw
 let g:netrw_banner = 0
+" open files in the current buffer
+let g:netrw_browse_split = 4
 
 " turn undo files on and set the directory for them
 set undofile
