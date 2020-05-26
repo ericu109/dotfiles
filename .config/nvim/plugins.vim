@@ -29,7 +29,7 @@ nnoremap <Leader>ps :Rg<SPACE>
 " project files and what not
 " For searching for files that can be tracked by git (tracked and untracked),
 " switching between project files and what not (comes from fzf.vim)
-nnoremap <Leader>pf :GFiles?<CR>
+nnoremap <Leader>pf :GFiles --exclude-standard --cached --others<CR>
 
 """"""""""""""""""""""""""""""
 " livedown (markdown plugin)
