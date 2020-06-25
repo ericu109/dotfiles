@@ -4,6 +4,7 @@ source $HOME/.config/nvim/vimsettings.vim
 source $HOME/.config/nvim/plugins.vim
 
 colorscheme codedark " sets the color scheme to vim-code-dark
+highlight CocHighlightText  guibg=#343a40
 
 " Trims whitespace from files
 fun! TrimWhitespace()
