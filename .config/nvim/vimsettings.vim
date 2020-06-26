@@ -7,7 +7,7 @@ set shiftwidth=2
 set expandtab " inserts spaces instead of tabs when tab is pressed
 
 set smartindent " Turns smart indenting on
-set number " Turns line numbers on
+set relativenumber " Turns line numbers on
 set nowrap " allows lines to extend for unlimited columns
 
 " ignores case in searches until a capital letter is in the search clause
