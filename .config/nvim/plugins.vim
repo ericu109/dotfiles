@@ -106,8 +106,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " autocmd FileType cs nnoremap <silent> K :OmniSharpDocumentation<CR>
 
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>f  <Plug>(coc-format)
+nmap <leader>f  <Plug>(coc-format)
 
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph
