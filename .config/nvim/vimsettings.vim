@@ -7,6 +7,7 @@ set shiftwidth=2
 set expandtab " inserts spaces instead of tabs when tab is pressed
 
 set smartindent " Turns smart indenting on
+set number
 set relativenumber " Turns line numbers on
 set nowrap " allows lines to extend for unlimited columns
 
