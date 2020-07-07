@@ -10,6 +10,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch':'release'}
 " Plug 'OmniSharp/omnisharp-vim'
 Plug 'shime/vim-livedown'
+Plug 'wakatime/vim-wakatime'
 
 call plug#end()
 
