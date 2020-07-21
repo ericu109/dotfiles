@@ -11,7 +11,7 @@ Plug 'neoclide/coc.nvim', {'branch':'release'}
 " Plug 'OmniSharp/omnisharp-vim'
 Plug 'shime/vim-livedown'
 Plug 'wakatime/vim-wakatime'
-
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 " Turn on the colorizer plugin
