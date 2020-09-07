@@ -5,6 +5,7 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab " inserts spaces instead of tabs when tab is pressed
+set hidden
 
 set smartindent " Turns smart indenting on
 set number
