@@ -14,6 +14,8 @@ Plug 'wakatime/vim-wakatime'
 Plug 'tpope/vim-commentary'
 call plug#end()
 
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
+
 " Turn on the colorizer plugin
 lua require'colorizer'.setup()
 
