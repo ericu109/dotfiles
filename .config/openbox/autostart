@@ -18,7 +18,7 @@
 
 tint2 &
 pasystray &
-insync &
+insync start&
 discord &
 polychromatic-tray-applet &
 xset s noblank -dpms &
