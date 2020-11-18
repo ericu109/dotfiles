@@ -1,12 +1,13 @@
 {
   "dependencies": {
-    "coc-angular": ">=0.1000.4",
-    "coc-css": ">=1.2.4",
+    "coc-angular": ">=0.1000.7",
+    "coc-css": ">=1.2.5",
     "coc-html": ">=1.2.4",
     "coc-json": ">=1.2.6",
     "coc-marketplace": ">=1.7.0",
-    "coc-snippets": ">=2.1.28",
+    "coc-pairs": ">=1.2.21",
+    "coc-snippets": ">=2.2.1",
     "coc-tslint": ">=1.0.17",
-    "coc-tsserver": ">=1.5.3"
+    "coc-tsserver": ">=1.5.8"
   }
 }
