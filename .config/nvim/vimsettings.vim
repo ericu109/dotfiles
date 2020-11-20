@@ -55,7 +55,7 @@ set shortmess+=c
 
 let mapleader = " "
 
-" map nh in normal mode to clear highlights from searching
+" map ch in normal mode to clear highlights from searching
 " I was just doing /asdf to clear, but I didn't know :noh existed
-nnoremap nh :nohlsearch<CR>
+nnoremap ch :nohlsearch<CR>
 
