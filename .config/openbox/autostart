@@ -23,4 +23,5 @@ discord &
 polychromatic-tray-applet &
 xset s noblank -dpms &
 variety &
-redshift-gtk
+redshift-gtk &
+signal-desktop
