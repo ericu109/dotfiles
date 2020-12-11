@@ -24,4 +24,5 @@ polychromatic-tray-applet &
 xset s noblank -dpms &
 variety &
 redshift-gtk &
-signal-desktop
+signal-desktop &
+dunst
