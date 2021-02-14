@@ -21,7 +21,7 @@ pasystray &
 insync start&
 discord &
 polychromatic-tray-applet &
-xset s noblank -dpms &
+xset s off -dpms &
 variety &
 redshift-gtk &
 signal-desktop &
