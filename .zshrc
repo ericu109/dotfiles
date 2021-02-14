@@ -120,8 +120,8 @@ bindkey '^[[F' vi-end-of-line
 
 # Other shit
 HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=100000
 
 unsetopt share_history
 
