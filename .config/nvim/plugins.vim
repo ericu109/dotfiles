@@ -12,7 +12,15 @@ Plug 'neoclide/coc.nvim', {'branch':'release'}
 Plug 'shime/vim-livedown'
 Plug 'wakatime/vim-wakatime'
 Plug 'tpope/vim-commentary'
+Plug 'heavenshell/vim-jsdoc', {
+  \ 'for': ['javascript', 'javascript.jsx','typescript'],
+  \ 'do': 'make install'
+\}
 call plug#end()
+
+" Settings for vim-jsdoc
+let g:jsdoc_formatter = 'tsdoc'
+nmap <Leader>doc <Plug>(jsdoc)
 
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
 
