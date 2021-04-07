@@ -18,7 +18,8 @@
 
 tint2 &
 pasystray &
-insync start&
+insync start &
+lxpolkit &
 discord &
 polychromatic-tray-applet &
 xset s off -dpms &
