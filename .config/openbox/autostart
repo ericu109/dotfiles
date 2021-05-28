@@ -26,4 +26,5 @@ xset s off -dpms &
 variety &
 redshift-gtk &
 signal-desktop &
-dunst
+dunst &
+teams
