@@ -3,6 +3,8 @@
 export PATH="$PATH:$HOME/.dotnet/tools/"
 export EDITOR="nvim"
 export LIBVIRT_DEFAULT_URI="qemu:///system"
+# For karma/ng test to user firefox developer edition
+export FIREFOX_DEVELOPER_BIN="/usr/lib/firefox-developer-edition/firefox"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/eric/.oh-my-zsh"
