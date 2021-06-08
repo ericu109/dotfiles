@@ -124,10 +124,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 xmap <leader>f  <Plug>(coc-format)
 nmap <leader>f  <Plug>(coc-format)
 
-" Applying codeAction to the selected region.
-" Example: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
+" space-q for quickfix menu
+nmap <leader>q <Plug>(coc-codeaction)
 " markdown server toggle
 nmap gm :LivedownToggle<CR>
 
