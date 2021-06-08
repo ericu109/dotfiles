@@ -19,6 +19,9 @@ nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 
+nnoremap <Leader>+ :vertical resize +10<CR>
+nnoremap <Leader>- :vertical resize -10<CR>
+
 " open the file explorer as a left bar
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 
