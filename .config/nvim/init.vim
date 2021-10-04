@@ -32,3 +32,4 @@ noremap! <C-h> <C-w>
 map <C-a> <esc>ggVG<CR>
 
 autocmd BufWritePre * :call TrimWhitespace() " Auto trims whitespace on write
+autocmd BufEnter * :syntax sync fromstart " Fix syntax highlighting not working on long files
