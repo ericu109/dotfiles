@@ -1,5 +1,5 @@
 {
-  "html.autoClosingTags": true,
-  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
-  "tslint.autoFixOnSave": true
+  "html.autoClosingTags": false,
+  "html.format.wrapLineLength": 0,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true
 }
