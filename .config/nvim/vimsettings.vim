@@ -59,3 +59,10 @@ let mapleader = " "
 " I was just doing /asdf to clear, but I didn't know :noh existed
 nnoremap ch :nohlsearch<CR>
 
+" Create undo break points on , . ! and ?
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+
+autocmd FileType scss setl iskeyword+=@-@
