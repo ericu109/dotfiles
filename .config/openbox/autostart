@@ -25,7 +25,6 @@ polychromatic-tray-applet &
 xset s off -dpms &
 variety &
 redshift-gtk &
-signal-desktop &
 dunst &
 teams &
 thunderbird
