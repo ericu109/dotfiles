@@ -3,6 +3,6 @@
     "editor.fontLigatures": true,
     "workbench.iconTheme": "vscode-icons",
     "vsicons.dontShowNewVersionMessage": true,
-    "window.zoomLevel": 0,
-    "editor.renderWhitespace": "all"
+    "editor.renderWhitespace": "all",
+    "security.workspace.trust.untrustedFiles": "open"
 }
