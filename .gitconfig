@@ -1,0 +1,18 @@
+[user]
+	email = eric@urbina.dev
+	name = Eric Urbina
+	signingkey = C7623743A5A984A9
+[commit]
+	gpgsign = true
+[diff]
+  tool = bcomp
+[difftool]
+  prompt = false
+[difftool "bcomp"]
+  trustExitCode = true
+  cmd = "/usr/bin/bcompare" \"$LOCAL\" \"$REMOTE\"
+[core]
+	excludesfile = /home/eric/.gitignore
+	editor = nvim
+[alias]
+	checkou = checkout
