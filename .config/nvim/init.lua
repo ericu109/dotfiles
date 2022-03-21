@@ -50,3 +50,10 @@ vim.cmd([[
     autocmd CursorHoldI * silent! lua vim.lsp.buf.signature_help()
   augroup END
 ]])
+
+-- show diagnostic information on hover
+vim.cmd([[
+  augroup lsp_show_diagnostics
+    autocmd CursorHold * silent! lua vim.diagnostic.open_float()
+  augroup END
+]])
