@@ -43,3 +43,10 @@ vim.cmd([[
     autocmd CursorMoved * lua vim.lsp.buf.clear_references()
   augroup END
 ]])
+
+-- Shows box with signature information when inside of perens on a function call
+vim.cmd([[
+  augroup lsp_show_signature
+    autocmd CursorHoldI * silent! lua vim.lsp.buf.signature_help()
+  augroup END
+]])
