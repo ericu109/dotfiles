@@ -70,6 +70,13 @@ require('packer').startup(function(use)
       require('spellsitter').setup()
     end
   }
+
+  use {
+    'jedi2610/nvim-rooter.lua',
+    config = function ()
+      require('nvim-rooter').setup()
+    end
+  }
 end)
 
 -- Config for treesitter
