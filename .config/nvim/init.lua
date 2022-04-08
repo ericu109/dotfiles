@@ -45,15 +45,19 @@ vim.cmd([[
 ]])
 
 -- Shows box with signature information when inside of perens on a function call
-vim.cmd([[
-  augroup lsp_show_signature
-    autocmd CursorHoldI * silent! lua vim.lsp.buf.signature_help()
-  augroup END
-]])
+-- Maybe with other changes, I move to the pop up way too often on accident, keymap instead
+-- vim.cmd([[
+--   augroup lsp_show_signature
+--     autocmd CursorHoldI * silent! lua vim.lsp.buf.signature_help()
+--   augroup END
+-- ]])
+vim.api.nvim_set_keymap('i', '<c-s>', ':lua vim.lsp.buf.signature_help()<CR>', {noremap=true})
 
 -- show diagnostic information on hover
-vim.cmd([[
-  augroup lsp_show_diagnostics
-    autocmd CursorHold * silent! lua vim.diagnostic.open_float()
-  augroup END
-]])
+-- Also get's in the way all the time..
+-- vim.cmd([[
+--   augroup lsp_show_diagnostics
+--     autocmd CursorHold * silent! lua vim.diagnostic.open_float()
+--   augroup END
+-- ]])
+vim.api.nvim_set_keymap('n', '<leader>e', ':lua vim.diagnostic.open_float()<CR>', {noremap=true})
