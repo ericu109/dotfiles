@@ -79,9 +79,12 @@ require('packer').startup(function(use)
   }
 end)
 
+require('telescope').setup({defaults = {file_ignore_patterns = {"Migrations"}}})
+
 -- Config for treesitter
 require('nvim-treesitter.configs').setup({
-    ensure_installed = 'maintained',
+    ensure_installed = 'all',
+    ignore_install = { 'phpdoc' },
     sync_install = false,
     autoparis = {
       enable = true
