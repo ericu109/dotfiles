@@ -5,7 +5,7 @@ export EDITOR="nvim"
 export LIBVIRT_DEFAULT_URI="qemu:///system"
 # For karma/ng test to user firefox developer edition
 export FIREFOX_DEVELOPER_BIN="/usr/lib/firefox-developer-edition/firefox"
-export CHROME_BIN="/usr/lib/chromium"
+export CHROME_BIN="/usr/bin/brave"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/eric/.oh-my-zsh"
