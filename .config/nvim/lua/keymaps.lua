@@ -46,7 +46,7 @@ vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', {noremap =
 vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', 'gr', '<cmd>lua require("telescope.builtin").lsp_references({layout_strategy="vertical",layout_config={width=0.99}})<CR>', {noremap = true, silent = true})
 --vim.api.nvim_set_keymap('n', '<leader>q', '<cmd>lua vim.lsp.buf.code_action()<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<leader>q', ':Telescope lsp_code_actions theme=cursor<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>q', '<cmd>lua vim.lsp.buf.code_action()<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>rr', '<cmd>lua vim.lsp.buf.rename()<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', {noremap = true, silent = true})
 
