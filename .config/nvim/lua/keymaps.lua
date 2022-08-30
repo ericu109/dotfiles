@@ -24,7 +24,7 @@ vim.api.nvim_set_keymap('n', '<leader>pv', ':wincmd v<bar> :Ex <bar> :vertical r
 --vim.api.nvim_set_keymap('n', '<leader>pv', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
 
 -- navigation / finding files
-vim.api.nvim_set_keymap('n', '<leader>pf', '<cmd>lua require("telescope.builtin").git_files({layout_strategy="vertical",layout_config={width=0.99}})<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>pf', '<cmd>lua require("telescope.builtin").git_files({layout_strategy="vertical",show_untracked=true,layout_config={width=0.99}})<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>ps', '<cmd>lua require("telescope.builtin").live_grep({layout_strategy="vertical",layout_config={width=0.99}})<CR>', {noremap = true, silent = true})
 
 -- vertical resize (width resize) for a window
