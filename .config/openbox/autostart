@@ -21,9 +21,8 @@ pasystray &
 insync start &
 lxpolkit &
 discord &
-polychromatic-tray-applet &
 xset s off -dpms &
-variety &
+DISPLAY=:0 feh --recursive --bg-fill --randomize ~/GoogleDrive/Photos/Wallpapers/* &
 redshift-gtk &
 dunst &
 teams &
