@@ -219,6 +219,11 @@
         <to>4</to>
       </action>
     </keybind>
+    <keybind key="W-S-l">
+      <action name="Execute">
+        <command>dm-tool lock</command>
+      </action>
+    </keybind>
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
     </keybind>
