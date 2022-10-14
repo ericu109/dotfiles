@@ -72,7 +72,7 @@ require('packer').startup(function(use)
   }
 
   use {
-    'jedi2610/nvim-rooter.lua',
+    'notjedi/nvim-rooter.lua',
     config = function ()
       require('nvim-rooter').setup()
     end
