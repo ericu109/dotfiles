@@ -25,5 +25,4 @@ xset s off -dpms &
 DISPLAY=:0 feh --recursive --bg-fill --randomize ~/GoogleDrive/Photos/Wallpapers/* &
 redshift-gtk &
 dunst &
-teams &
 thunderbird
