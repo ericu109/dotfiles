@@ -77,6 +77,9 @@ require('packer').startup(function(use)
       require('nvim-rooter').setup()
     end
   }
+
+  -- auto complete html tags
+  use 'windwp/nvim-ts-autotag'
 end)
 
 require('telescope').setup({defaults = {file_ignore_patterns = {"Migrations"}}})
@@ -92,5 +95,9 @@ require('nvim-treesitter.configs').setup({
     highlight = {
       enable = true,
       additional_vim_regex_highlighting = true -- this is mostly so spell doesn't mark class names and what not
+    },
+    autotag = {
+      enable = true
     }
 })
+
