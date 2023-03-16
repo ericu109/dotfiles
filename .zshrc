@@ -113,6 +113,7 @@ source $ZSH/oh-my-zsh.sh
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias vi='vim'
 alias vim='nvim'
+alias lg='lazygit'
 
 bindkey '^R' history-incremental-search-backward
 bindkey '^\b' backward-kill-word
