@@ -97,7 +97,8 @@ require('nvim-treesitter.configs').setup({
       additional_vim_regex_highlighting = true -- this is mostly so spell doesn't mark class names and what not
     },
     autotag = {
-      enable = true
+      enable = true,
+      filetypes = {"html", "xml"}
     }
 })
 
