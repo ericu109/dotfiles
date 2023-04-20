@@ -131,5 +131,3 @@ SAVEHIST=100000
 unsetopt share_history
 
 neofetch
-
-alias luamake=/home/eric/.config/nvim/lanuage-servers/lua-language-server/3rd/luamake/luamake
