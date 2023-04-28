@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="$PATH:$HOME/.dotnet/tools/"
+export PATH="$PATH:$HOME/.dotnet/tools/:$HOME/.scripts"
 export EDITOR="nvim"
 export LIBVIRT_DEFAULT_URI="qemu:///system"
 # For karma/ng test to user firefox developer edition

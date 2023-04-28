@@ -1,0 +1,8 @@
+#!/bin/bash
+RED='\033[0;31m'
+NOCOLOR='\033[0m'
+
+echo -e "${RED}You've done it again.. Here, I'll help..${NOCOLOR}"
+echo -e "git $@"
+
+git $@
