@@ -114,6 +114,7 @@ alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias vi='vim'
 alias vim='nvim'
 alias lg='lazygit'
+alias bashtop='bpytop'
 
 bindkey '^R' history-incremental-search-backward
 bindkey '^\b' backward-kill-word
