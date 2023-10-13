@@ -63,14 +63,6 @@ require('packer').startup(function(use)
   -- autopairs (auto close (, [, {, etc.)
   use 'windwp/nvim-autopairs'
 
-  -- spell helping via treesitter
-  use {
-    'lewis6991/spellsitter.nvim',
-    config = function ()
-      require('spellsitter').setup()
-    end
-  }
-
   use {
     'notjedi/nvim-rooter.lua',
     config = function ()
@@ -80,6 +72,10 @@ require('packer').startup(function(use)
 
   -- auto complete html tags
   use 'windwp/nvim-ts-autotag'
+
+  -- prettier
+  use('jose-elias-alvarez/null-ls.nvim')
+  use('MunifTanjim/prettier.nvim')
 end)
 
 require('telescope').setup({defaults = {file_ignore_patterns = {"Migrations"}}})
