@@ -12,7 +12,6 @@ require('lsp.css')
 require('lsp.html')
 require('lsp.eslint')
 require('lsp.prettier')
-require('lsp.null-ls')
 
 -- Completion Configurations
 require('comp')

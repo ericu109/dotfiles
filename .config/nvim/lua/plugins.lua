@@ -74,8 +74,7 @@ require('packer').startup(function(use)
   use 'windwp/nvim-ts-autotag'
 
   -- prettier
-  use('jose-elias-alvarez/null-ls.nvim')
-  use('MunifTanjim/prettier.nvim')
+  use 'MunifTanjim/prettier.nvim'
 end)
 
 require('telescope').setup({defaults = {file_ignore_patterns = {"Migrations"}}})
