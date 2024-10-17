@@ -85,10 +85,11 @@ function format()
   }
 
   if has_value(prettierFilesTypes, vim.bo.filetype) then
-    vim.api.nvim_exec2(':Prettier', {});
-    return
+    print('Formatted with Prettier')
+    vim.cmd(':Prettier')
   else
     vim.lsp.buf.format({async=true})
+    print('Formatted with vim.lsp.buf.format')
   end
 end
 

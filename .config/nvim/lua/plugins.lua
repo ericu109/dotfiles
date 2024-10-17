@@ -74,6 +74,7 @@ require('packer').startup(function(use)
   use 'windwp/nvim-ts-autotag'
 
   -- prettier (html, ts, js, css, etc. formatting)
+  use 'nvimtools/none-ls.nvim' -- required by prettier plugin for some reason?
   use 'MunifTanjim/prettier.nvim'
 
   -- telescope window for ui.select (mostly for code_action)
