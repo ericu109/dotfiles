@@ -1,7 +1,7 @@
 local git_dir = vim.fs.root(vim.loop.cwd(), '.git');
 
 if git_dir ~= nil then
-  local project_path = vim.fs.dirname(vim.fs.find({'angular.json'})[1])
+  local project_path = vim.fs.dirname(vim.fs.find({'angular.json'}, {path = git_dir})[1])
   local node_modules_path = vim.fs.joinpath(project_path, 'node_modules')
   local ngServerPath = vim.fs.joinpath(node_modules_path, '@angular', 'language-server', 'bin', 'ngserver')
 
