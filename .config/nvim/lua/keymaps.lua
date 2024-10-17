@@ -48,7 +48,7 @@ vim.api.nvim_set_keymap('n', 'gs', '<cmd>lua require("telescope.builtin").treesi
 vim.api.nvim_set_keymap('n', '<leader>q', '<cmd>lua vim.lsp.buf.code_action()<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>fs', '<cmd>lua require("telescope.builtin").spell_suggest()<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>rr', '<cmd>lua vim.lsp.buf.rename()<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.format({async=true})<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>lua format()<CR>', {noremap = true, silent = true})
 
 -- < or > in visual mode to move the indentation level of selected lines
 vim.api.nvim_set_keymap('v', '<', '<gv', {noremap = true, silent = true})
@@ -60,3 +60,44 @@ vim.api.nvim_set_keymap('x', 'J', ':move \'<+1<CR>gv-gv', {noremap=true, silent=
 
 -- Hold on to what's in the register when pasting over something, instead of yanking what was pasted over
 vim.api.nvim_set_keymap('v', 'p', '"_dP', {noremap=true, silent=true})
+
+vim.api.nvim_create_autocmd({'BufWritePre'}, {
+  pattern = {'*'},
+  callback = function()
+    format()
+  end
+})
+
+function format()
+  local prettierFilesTypes = {
+    "css",
+    "graphql",
+    "html",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "less",
+    "markdown",
+    "scss",
+    "typescript",
+    "typescriptreact",
+    "yaml",
+  }
+
+  if has_value(prettierFilesTypes, vim.bo.filetype) then
+    vim.api.nvim_exec2(':Prettier', {});
+    return
+  else
+    vim.lsp.buf.format({async=true})
+  end
+end
+
+function has_value (tab, val)
+  for index, value in ipairs(tab) do
+    if value == val then
+      return true
+    end
+  end
+
+  return false
+end

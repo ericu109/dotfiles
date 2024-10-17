@@ -55,7 +55,7 @@ require('packer').startup(function(use)
   use 'saadparwaiz1/cmp_luasnip' -- snippet completions
   use 'hrsh7th/cmp-nvim-lsp' -- use lsp for completion
   use 'hrsh7th/cmp-nvim-lua'
-  --
+
   -- snippets
   use 'L3MON4D3/LuaSnip' -- snippet engine
   use 'rafamadriz/friendly-snippets' -- a bunch of snippets for lots of languages
@@ -73,11 +73,24 @@ require('packer').startup(function(use)
   -- auto complete html tags
   use 'windwp/nvim-ts-autotag'
 
-  -- prettier
+  -- prettier (html, ts, js, css, etc. formatting)
   use 'MunifTanjim/prettier.nvim'
+
+  -- telescope window for ui.select (mostly for code_action)
+  use 'nvim-telescope/telescope-ui-select.nvim'
 end)
 
-require('telescope').setup({defaults = {file_ignore_patterns = {"Migrations"}}})
+require('telescope').setup({
+  defaults = {
+    file_ignore_patterns = {"Migrations"}
+  },
+  extensions = {
+    ["ui-select"] = {
+      require("telescope.themes").get_dropdown({}),
+    }
+  }
+})
+require("telescope").load_extension("ui-select")
 
 -- Config for treesitter
 require('nvim-treesitter.configs').setup({
@@ -90,10 +103,7 @@ require('nvim-treesitter.configs').setup({
     highlight = {
       enable = true,
       additional_vim_regex_highlighting = true -- this is mostly so spell doesn't mark class names and what not
-    },
-    autotag = {
-      enable = true,
-      filetypes = {"html", "xml"}
     }
 })
 
+require('nvim-ts-autotag').setup({})
