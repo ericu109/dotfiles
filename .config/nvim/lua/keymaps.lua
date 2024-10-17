@@ -61,12 +61,13 @@ vim.api.nvim_set_keymap('x', 'J', ':move \'<+1<CR>gv-gv', {noremap=true, silent=
 -- Hold on to what's in the register when pasting over something, instead of yanking what was pasted over
 vim.api.nvim_set_keymap('v', 'p', '"_dP', {noremap=true, silent=true})
 
-vim.api.nvim_create_autocmd({'BufWritePre'}, {
-  pattern = {'*'},
-  callback = function()
-    format()
-  end
-})
+-- vim.api.nvim_create_autocmd({'BufWritePre'}, {
+--   pattern = {'*'},
+--   callback = function()
+--     format()
+--     vim.cmd.write()
+--   end
+-- })
 
 function format()
   local prettierFilesTypes = {
@@ -88,7 +89,7 @@ function format()
     print('Formatted with Prettier')
     vim.cmd(':Prettier')
   else
-    vim.lsp.buf.format({async=true})
+    vim.lsp.buf.format({async=false})
     print('Formatted with vim.lsp.buf.format')
   end
 end
