@@ -140,5 +140,6 @@ HISTSIZE=100000
 SAVEHIST=100000
 
 unsetopt share_history
+setopt HIST_IGNORE_SPACE
 
 neofetch
