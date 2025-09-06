@@ -50,17 +50,9 @@
 </menu>
 
 <menu id="apps-term-menu" label="Terminals">
-  <item label="Termite">
+  <item label="Kitty">
     <action name="Execute">
-      <command>termite</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
-  <item label="Alacritty">
-    <action name="Execute">
-      <command>alacritty</command>
+      <command>kitty</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
@@ -86,6 +78,14 @@
       <startupnotify>
         <enabled>yes</enabled>
         <wmclass>Firefox</wmclass>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Brave">
+    <action name="Execute">
+      <command>brave</command>
+      <startupnotify>
+        <enabled>yes</enabled>
       </startupnotify>
     </action>
   </item>

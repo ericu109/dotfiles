@@ -1,23 +1,24 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 NPM_PACKAGES="$HOME/.npm-packages"
-export PATH="$PATH:$HOME/.dotnet/tools/:$HOME/.scripts:$NPM_PACKAGES/bin"
+export PATH="$PATH:$HOME/.dotnet/tools:$HOME/.scripts:$NPM_PACKAGES/bin"
 export EDITOR="nvim"
 export LIBVIRT_DEFAULT_URI="qemu:///system"
 # For karma/ng test to user firefox developer edition
 export FIREFOX_DEVELOPER_BIN="/usr/lib/firefox-developer-edition/firefox"
 export CHROME_BIN="/usr/bin/brave"
 export ASPNETCORE_ENVIRONMENT="Development"
+export DOTNET_USE_POLLING_FILE_WATCHER=1
 
 export DOTNET_WATCH_RESTART_ON_RUDE_EDIT="true"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/eric/.oh-my-zsh"
 
-# adb-fastboot for installing Lineageos
-if [ -d "$HOME/adb-fastboot/platform-tools" ] ; then
- export PATH="$HOME/adb-fastboot/platform-tools:$PATH"
-fi
+# # adb-fastboot for installing Lineageos
+# if [ -d "$HOME/adb-fastboot/platform-tools" ] ; then
+#  export PATH="$HOME/adb-fastboot/platform-tools:$PATH"
+# fi
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -119,11 +120,9 @@ export MANPATH="/usr/local/man:$MANPATH:$NPM_PACKAGES/share/man"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # alias ls=ls --color=auto
-alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias vi='vim'
 alias vim='nvim'
 alias lg='lazygit'
-alias bashtop='bpytop'
 alias workon='. workon'
 
 bindkey '^R' history-incremental-search-backward
@@ -143,3 +142,7 @@ unsetopt share_history
 setopt HIST_IGNORE_SPACE
 
 neofetch
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)

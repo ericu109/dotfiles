@@ -42,6 +42,7 @@ vim.o.list = true
 
 -- Turn on the spell checker
 vim.o.spell = true
+vim.o.spelloptions = 'camel'
 
 -- Keeps the cursor in the middle of the screen, except for the beginning and end of files
 vim.o.scrolloff = 9999
