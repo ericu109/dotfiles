@@ -76,6 +76,7 @@ function format()
     "html",
     "javascript",
     "javascriptreact",
+    "htmlangular",
     "json",
     "less",
     "markdown",
