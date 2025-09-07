@@ -61,6 +61,18 @@ vim.api.nvim_set_keymap('x', 'J', ':move \'<+1<CR>gv-gv', {noremap=true, silent=
 -- Hold on to what's in the register when pasting over something, instead of yanking what was pasted over
 vim.api.nvim_set_keymap('v', 'p', '"_dP', {noremap=true, silent=true})
 
+-- Close any netrw buffers when entering a new buffers
+-- Mostly this is to close netrw after selecting a file
+vim.api.nvim_create_autocmd({'BufEnter'}, {
+  callback = function(ev)
+    for _, buf_id in pairs(vim.api.nvim_list_bufs()) do
+      if vim.bo[buf_id].filetype == 'netrw' then
+        vim.api.nvim_buf_delete(buf_id, {})
+      end
+    end
+  end
+})
+
 vim.api.nvim_create_autocmd({'BufWritePre'}, {
   pattern = {'*'},
   callback = function()
