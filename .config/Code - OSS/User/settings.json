@@ -5,5 +5,6 @@
     "vsicons.dontShowNewVersionMessage": true,
     "editor.renderWhitespace": "all",
     "security.workspace.trust.untrustedFiles": "open",
-    "workbench.editor.empty.hint": "hidden"
+    "workbench.editor.empty.hint": "hidden",
+    "workbench.colorTheme": "Tokyo Night"
 }
