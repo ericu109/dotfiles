@@ -83,7 +83,13 @@ require('packer').startup(function(use)
   -- telescope window for ui.select (mostly for code_action)
   use 'nvim-telescope/telescope-ui-select.nvim'
 
+  -- f/F/t/T highlighting
   use 'jinh0/eyeliner.nvim'
+
+  -- easymotion like plugin for navigating what's currently on screen.
+  use 'folke/flash.nvim'
+
+
 end)
 
 require('telescope').setup({

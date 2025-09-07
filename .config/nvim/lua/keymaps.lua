@@ -3,6 +3,7 @@ vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true}
 
 -- set the leader key to space
 vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- ch in normal mode to clear highlighting after searching
 vim.api.nvim_set_keymap('n', 'ch', ':nohlsearch<CR>:syntax sync fromstart<CR>', {noremap = true, silent = true})
@@ -60,6 +61,11 @@ vim.api.nvim_set_keymap('x', 'J', ':move \'<+1<CR>gv-gv', {noremap=true, silent=
 
 -- Hold on to what's in the register when pasting over something, instead of yanking what was pasted over
 vim.api.nvim_set_keymap('v', 'p', '"_dP', {noremap=true, silent=true})
+
+-- flash.nvim Keymaps
+vim.api.nvim_set_keymap('n', 's', '<cmd>lua require("flash").jump()<cr>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('x', 's', '<cmd>lua require("flash").jump()<cr>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('o', 's', '<cmd>lua require("flash").jump()<cr>', {noremap = true, silent = true})
 
 -- Close any netrw buffers when entering a new buffers
 -- Mostly this is to close netrw after selecting a file
