@@ -89,6 +89,12 @@ require('packer').startup(function(use)
   -- easymotion like plugin for navigating what's currently on screen.
   use 'folke/flash.nvim'
 
+  use {
+    'leath-dub/snipe.nvim',
+    config = function()
+      require('snipe').setup()
+    end
+  }
 
 end)
 

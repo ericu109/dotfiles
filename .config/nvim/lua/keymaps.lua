@@ -67,6 +67,9 @@ vim.api.nvim_set_keymap('n', 's', '<cmd>lua require("flash").jump()<cr>', {norem
 vim.api.nvim_set_keymap('x', 's', '<cmd>lua require("flash").jump()<cr>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('o', 's', '<cmd>lua require("flash").jump()<cr>', {noremap = true, silent = true})
 
+-- snipe.nvim Keymaps
+vim.api.nvim_set_keymap('n', '<leader>gb', '<cmd>lua require("snipe").open_buffer_menu()<cr>', {noremap = true, silent = true})
+
 -- Close any netrw buffers when entering a new buffers
 -- Mostly this is to close netrw after selecting a file
 vim.api.nvim_create_autocmd({'BufEnter'}, {
