@@ -114,8 +114,8 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = "luasnip" },
-    { name = "buffer" },
     { name = "path" },
+    { name = "buffer", keyword_length = 5 }, -- keyword_length, stops completion from showing up until there are at least 5 characters typed
     { name = 'nvim_lua' },
   },
   confirm_opts = {

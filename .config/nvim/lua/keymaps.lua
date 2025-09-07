@@ -73,6 +73,7 @@ vim.api.nvim_create_autocmd({'BufEnter'}, {
   end
 })
 
+-- Auto format on save
 vim.api.nvim_create_autocmd({'BufWritePre'}, {
   pattern = {'*'},
   callback = function()
@@ -81,6 +82,7 @@ vim.api.nvim_create_autocmd({'BufWritePre'}, {
   end
 })
 
+-- function to switch between formatting with prettier and formatting with the lsp
 function format()
   local prettierFilesTypes = {
     "css",
