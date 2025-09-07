@@ -30,10 +30,12 @@ vim.cmd([[
   autocmd BufWritePre * :call TrimWhitespace()
 ]])
 
-vim.g.vscode_style = "dark"
+--vim.g.vscode_style = "dark"
 -- Enable italic comment
-vim.g.vscode_italic_comment = 1
-vim.cmd('colorscheme vscode') -- Set the colorscheme
+--vim.g.vscode_italic_comment = 1
+--vim.cmd('colorscheme vscode') -- Set the colorscheme
+--
+vim.cmd('colorscheme tokyonight-night') -- Set the colorscheme
 
 -- autocmds, TODO: replace with lua when lua autocommands are released
 

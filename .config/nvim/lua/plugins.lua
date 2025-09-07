@@ -10,8 +10,9 @@ require('packer').startup(function(use)
   -- let packer manage itself
   use 'wbthomason/packer.nvim'
 
-  -- color scheme like visual studio
-  use 'Mofiqul/vscode.nvim'
+  -- color scheme(s)
+  --use 'Mofiqul/vscode.nvim'
+  use 'folke/tokyonight.nvim'
 
   -- colorize hex codes and what not, mostly for css/scss
   use {
@@ -136,11 +137,12 @@ require('eyeliner').setup({
   -- see section on advanced configuration for more information
   default_keymaps = true,
 })
+
 vim.api.nvim_create_autocmd('ColorScheme', {
   pattern = '*',
   callback = function()
-    vim.api.nvim_set_hl(0, 'EyelinerPrimary', {fg='#fedd94', bold = true, underline = true})
-    vim.api.nvim_set_hl(0, 'EyelinerSecondary', {fg='#ff3b3b', bold = true, underline = true})
-    vim.api.nvim_set_hl(0, 'EyelinerDimmed', {fg='#6f6f6f', bold = false, underline = false})
+    vim.api.nvim_set_hl(0, 'EyelinerPrimary', {fg='#d28254', bold = true, underline = true})
+    vim.api.nvim_set_hl(0, 'EyelinerSecondary', {fg='#73d9c9', bold = true, underline = false})
+    vim.api.nvim_set_hl(0, 'EyelinerDimmed', {fg='#474e71', bold = false, underline = false})
   end,
 })
