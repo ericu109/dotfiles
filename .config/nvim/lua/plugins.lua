@@ -79,6 +79,8 @@ require('packer').startup(function(use)
 
   -- telescope window for ui.select (mostly for code_action)
   use 'nvim-telescope/telescope-ui-select.nvim'
+
+  use 'jinh0/eyeliner.nvim'
 end)
 
 require('telescope').setup({
@@ -108,3 +110,37 @@ require('nvim-treesitter.configs').setup({
 })
 
 require('nvim-ts-autotag').setup({})
+
+require('eyeliner').setup({
+  -- show highlights only after keypress
+  highlight_on_key = true,
+
+  -- dim all other characters if set to true (recommended!)
+  dim = true,
+
+  -- set the maximum number of characters eyeliner.nvim will check from
+  -- your current cursor position; this is useful if you are dealing with
+  -- large files: see https://github.com/jinh0/eyeliner.nvim/issues/41
+  max_length = 9999,
+
+  -- filetypes for which eyeliner should be disabled;
+  -- e.g., to disable on help files:
+  -- disabled_filetypes = {"help"}
+  disabled_filetypes = {},
+
+  -- buftypes for which eyeliner should be disabled
+  -- e.g., disabled_buftypes = {"nofile"}
+  disabled_buftypes = {"nofile"},
+
+  -- add eyeliner to f/F/t/T keymaps;
+  -- see section on advanced configuration for more information
+  default_keymaps = true,
+})
+vim.api.nvim_create_autocmd('ColorScheme', {
+  pattern = '*',
+  callback = function()
+    vim.api.nvim_set_hl(0, 'EyelinerPrimary', {fg='#fedd94', bold = true, underline = true})
+    vim.api.nvim_set_hl(0, 'EyelinerSecondary', {fg='#ff3b3b', bold = true, underline = true})
+    vim.api.nvim_set_hl(0, 'EyelinerDimmed', {fg='#6f6f6f', bold = false, underline = false})
+  end,
+})
