@@ -98,6 +98,20 @@ require('packer').startup(function(use)
   use {
     'folke/flash.nvim',
     config = function()
+      require('flash').setup({
+        highlight = {
+          groups = {
+            label = 'FlashLabelCustom',
+            match = 'FlashMatchCustom',
+            current = 'FlashCurrentCustom'
+          }
+        }
+      })
+
+      vim.api.nvim_set_hl(0, 'FlashLabelCustom', {fg='#d1d4e2', bg='#8c4a25', bold = true, underline = false})
+      vim.api.nvim_set_hl(0, 'FlashMatchCustom', {fg='#d1d4e2', bold = false, underline = false})
+      vim.api.nvim_set_hl(0, 'FlashCurrentCustom', {fg='#d1d4e2', bold = false, underline = false})
+
       vim.api.nvim_set_keymap('n', 's', '<cmd>lua require("flash").jump()<cr>', {noremap = true, silent = true})
       vim.api.nvim_set_keymap('x', 's', '<cmd>lua require("flash").jump()<cr>', {noremap = true, silent = true})
       vim.api.nvim_set_keymap('o', 's', '<cmd>lua require("flash").jump()<cr>', {noremap = true, silent = true})
