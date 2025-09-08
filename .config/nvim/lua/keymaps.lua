@@ -70,6 +70,10 @@ vim.api.nvim_set_keymap('o', 's', '<cmd>lua require("flash").jump()<cr>', {norem
 -- snipe.nvim Keymaps
 vim.api.nvim_set_keymap('n', '<leader>gb', '<cmd>lua require("snipe").open_buffer_menu()<cr>', {noremap = true, silent = true})
 
+-- signature help, and viewing diagnostic info
+vim.api.nvim_set_keymap('i', '<c-k>', '<cmd>:lua vim.lsp.buf.signature_help({focusable=false})<CR>', {noremap=true})
+vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>:lua vim.diagnostic.open_float()<CR>', {noremap=true})
+
 -- Close any netrw buffers when entering a new buffers
 -- Mostly this is to close netrw after selecting a file
 vim.api.nvim_create_autocmd({'BufEnter'}, {
