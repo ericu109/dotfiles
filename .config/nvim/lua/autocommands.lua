@@ -11,12 +11,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- Highlights other references to whatever is under the cursor
 vim.api.nvim_create_autocmd({'CursorHold'}, {
   group = group,
+  pattern = {'*.ts', '*.cs'},
   callback = function()
     vim.lsp.buf.document_highlight()
   end
 })
 vim.api.nvim_create_autocmd({'CursorMoved'}, {
   group = group,
+  pattern = {'*.ts', '*.cs'},
   callback = function()
     vim.lsp.buf.clear_references()
   end
