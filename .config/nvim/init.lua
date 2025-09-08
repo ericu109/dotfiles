@@ -21,5 +21,4 @@ require('autoparis')
 
 require('autocommands')
 
-vim.cmd('colorscheme tokyonight-night') -- Set the colorscheme
 

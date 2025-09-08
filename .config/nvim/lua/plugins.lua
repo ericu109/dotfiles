@@ -11,8 +11,16 @@ require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- color scheme(s)
-  --use 'Mofiqul/vscode.nvim'
-  use 'folke/tokyonight.nvim'
+  use {
+    'folke/tokyonight.nvim',
+    config = function()
+      require('tokyonight').setup({
+        style = 'night'
+      })
+
+      vim.cmd('colorscheme tokyonight')
+    end
+  }
 
   -- colorize hex codes and what not, mostly for css/scss
   use {
@@ -87,12 +95,20 @@ require('packer').startup(function(use)
   use 'jinh0/eyeliner.nvim'
 
   -- easymotion like plugin for navigating what's currently on screen.
-  use 'folke/flash.nvim'
+  use {
+    'folke/flash.nvim',
+    config = function()
+      vim.api.nvim_set_keymap('n', 's', '<cmd>lua require("flash").jump()<cr>', {noremap = true, silent = true})
+      vim.api.nvim_set_keymap('x', 's', '<cmd>lua require("flash").jump()<cr>', {noremap = true, silent = true})
+      vim.api.nvim_set_keymap('o', 's', '<cmd>lua require("flash").jump()<cr>', {noremap = true, silent = true})
+    end
+  }
 
   use {
     'leath-dub/snipe.nvim',
     config = function()
       require('snipe').setup()
+      vim.keymap.set('n', '<leader>gb', function() require('snipe').open_buffer_menu() end, {noremap = true, silent = true})
     end
   }
 
