@@ -96,6 +96,19 @@ require('packer').startup(function(use)
     end
   }
 
+  use {
+    'akinsho/toggleterm.nvim',
+    config = function()
+      require('toggleterm').setup({
+        direction = 'float'
+      })
+
+      vim.keymap.set('n', '<leader>t', function()
+        vim.cmd(':ToggleTerm')
+      end)
+    end
+  }
+
 end)
 
 require('telescope').setup({
