@@ -104,7 +104,7 @@ require('packer').startup(function(use)
       })
 
       vim.keymap.set('n', '<leader>t', function()
-        vim.cmd(':ToggleTerm')
+        vim.cmd(':ToggleTerm dir=' .. vim.fn.expand('%:p:h'))
       end)
     end
   }
