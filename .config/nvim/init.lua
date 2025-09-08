@@ -47,6 +47,14 @@ vim.cmd([[
   augroup END
 ]])
 
+-- Highlight yanked text after yanking (came from lazyvim config: lazyvim/config/autocmds.lua)
+vim.api.nvim_create_autocmd("TextYankPost", {
+  group = vim.api.nvim_create_augroup("highlight_yank", { clear = true }),
+  callback = function()
+    vim.hl.on_yank({timeout=600})
+  end,
+})
+
 -- Shows box with signature information when inside of perens on a function call
 -- Maybe with other changes, I move to the pop up way too often on accident, keymap instead
 -- vim.cmd([[
