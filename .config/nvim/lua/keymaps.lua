@@ -5,6 +5,10 @@ vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true}
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- move lines visually up and down
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
 -- ch in normal mode to clear highlighting after searching
 vim.api.nvim_set_keymap('n', 'ch', ':nohlsearch<CR>:syntax sync fromstart<CR>', {noremap = true, silent = true})
 
