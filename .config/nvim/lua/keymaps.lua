@@ -70,3 +70,6 @@ vim.api.nvim_set_keymap('v', 'p', '"_dP', {noremap=true, silent=true})
 vim.api.nvim_set_keymap('i', '<c-k>', '<cmd>:lua vim.lsp.buf.signature_help({focusable=false})<CR>', {noremap=true})
 vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>:lua vim.diagnostic.open_float()<CR>', {noremap=true})
 
+-- diagnostic navigation
+vim.keymap.set('n', '<leader>nd', function() vim.diagnostic.goto_next() end)
+vim.keymap.set('n', '<leader>pd', function() vim.diagnostic.goto_prev() end)
