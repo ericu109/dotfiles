@@ -105,6 +105,11 @@ require('packer').startup(function(use)
             match = 'FlashMatchCustom',
             current = 'FlashCurrentCustom'
           }
+        },
+        modes = {
+          char = {
+            enabled = false
+          }
         }
       })
 
