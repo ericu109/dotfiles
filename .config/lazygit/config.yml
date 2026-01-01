@@ -28,3 +28,6 @@ gui:
 
 git:
   overrideGpg: true
+  pagers:
+    - pager: delta --dark --paging=never
+    - externalDiffCommand: difft --color=always --display=inline
