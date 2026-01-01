@@ -8,7 +8,10 @@ export LIBVIRT_DEFAULT_URI="qemu:///system"
 export FIREFOX_DEVELOPER_BIN="/usr/lib/firefox-developer-edition/firefox"
 export CHROME_BIN="/usr/bin/chromium"
 export ASPNETCORE_ENVIRONMENT="Development"
+export DOTNET_ENVIRONMENT="Development"
 export DOTNET_USE_POLLING_FILE_WATCHER=1
+export DOTNET_WATCH_SUPPRESS_BROWSER_REFRESH=1
+export DOTNET_WATCH_PROCESS_CLEANUP_TIMEOUT_MS=1000
 
 export DOTNET_WATCH_RESTART_ON_RUDE_EDIT="true"
 
