@@ -6,7 +6,7 @@ export EDITOR="nvim"
 export LIBVIRT_DEFAULT_URI="qemu:///system"
 # For karma/ng test to user firefox developer edition
 export FIREFOX_DEVELOPER_BIN="/usr/lib/firefox-developer-edition/firefox"
-export CHROME_BIN="/usr/bin/brave"
+export CHROME_BIN="/usr/bin/chromium"
 export ASPNETCORE_ENVIRONMENT="Development"
 export DOTNET_USE_POLLING_FILE_WATCHER=1
 
