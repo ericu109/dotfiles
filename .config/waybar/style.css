@@ -71,7 +71,8 @@ button:hover {
 }
 
 #workspaces button.focused,
-#workspaces button.active {
+#workspaces button.active,
+#workspaces button.visible {
   background-color: #3d59a1;
 }
 
