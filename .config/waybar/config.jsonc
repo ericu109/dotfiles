@@ -27,7 +27,7 @@
     "show-passive-items": true
   },
   "clock": {
-    "format": "{:%b %d, %I:%M %p}",
+    "format": "{:%a, %b %d, %I:%M %p}",
     "interval": 60,
     "tooltip": true,
     "tooltip-format": "{:%A %B %d %G, %I:%M %p}"
