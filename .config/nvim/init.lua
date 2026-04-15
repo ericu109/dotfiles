@@ -3,6 +3,7 @@ require('plugins')
 require('keymaps')
 
 -- Configuration for the different language servers
+
 require('lsp.lua')
 require('lsp.typescript')
 require('lsp.angular')
@@ -12,6 +13,7 @@ require('lsp.css')
 require('lsp.html')
 require('lsp.eslint')
 require('lsp.prettier')
+require('lsp.bash')
 
 -- Completion Configurations
 require('comp')
