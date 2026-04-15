@@ -19,13 +19,13 @@ if git_dir ~= nil then
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-    require('lspconfig').angularls.setup({
+    vim.lsp.config('angularls', {
       cmd = ngls_cmd,
       on_new_config = function(new_config)
         new_config.cmd = ngls_cmd
       end,
-      on_attach = on_attach,
       capabilities = capabilities
     })
+    vim.lsp.enable('angularls');
   end
 end
