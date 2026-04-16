@@ -15,6 +15,7 @@ require('lsp.prettier')
 require('lsp.bash')
 require('lsp.docker')
 require('lsp.css_variables')
+require('lsp.lua')
 
 -- Completion Configurations
 require('comp')
@@ -23,5 +24,3 @@ require('comp')
 require('autoparis')
 
 require('autocommands')
-
-
