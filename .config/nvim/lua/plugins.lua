@@ -38,6 +38,7 @@ require('packer').startup(function(use)
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
+    branch = 'main'
   }
 
   use {
@@ -159,9 +160,7 @@ require('telescope').setup({
 require("telescope").load_extension("ui-select")
 
 -- Config for treesitter
-require('nvim-treesitter.configs').setup({
-    ensure_installed = 'all',
-    ignore_install = { 'phpdoc' },
+require('nvim-treesitter').setup({
     sync_install = false,
     autoparis = {
       enable = true
@@ -169,7 +168,19 @@ require('nvim-treesitter.configs').setup({
     highlight = {
       enable = true,
       additional_vim_regex_highlighting = true -- this is mostly so spell doesn't mark class names and what not
-    }
+    },
+})
+vim.api.nvim_create_autocmd('FileType', {
+  callback = function()
+    -- Enable treesitter highlighting and disable regex syntax
+    pcall(vim.treesitter.start)
+    -- Enable treesitter-based indentation
+    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+  end,
+})
+
+require('nvim-treesitter').install({
+  'all',
 })
 
 require('nvim-ts-autotag').setup({})
