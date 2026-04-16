@@ -24,8 +24,10 @@ require('packer').startup(function(use)
 
   -- colorize hex codes and what not, mostly for css/scss
   use {
-    'norcalli/nvim-colorizer.lua',
-    config = [[require('colorizer').setup()]],
+    'catgoose/nvim-colorizer.lua',
+    config = function()
+      require('colorizer').setup()
+    end,
   }
 
   -- Undo tree
