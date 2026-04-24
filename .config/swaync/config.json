@@ -29,7 +29,7 @@
   "image-visibility": "when-available",
   "transition-time": 200,
   "hide-on-clear": true,
-  "hide-on-action": true,
+  "hide-on-action": false,
   "text-empty": "No Notifications",
   "script-fail-notify": true,
   "scripts": {
