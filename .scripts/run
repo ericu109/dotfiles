@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# So, the idea here is that I have many software projects where I have a scripts folder to do things to the project, at the git root.
+# but I don't want to be in some deep folder working, and then have to do like ../../../../scripts/script.sh to run stuff
+# For example if I'm in a project and I want to add a new EF migration, and I have a script called add-migration.sh in the project's scripts folder
+# I want to be able to do like `run add-migration migrationName`, and be able to run the script with those args
+#
+# So this does that, it goes up the directory tree looking for scripts folders, and looking for the name you gave it in those folders.
+# If it finds something, it'll run it with all of the remaining arguments.
+#
+# I don't write many bash scripts, so this could probably be done much more nicely and/or better-er..
+
 runScript() {
   echo "-----------"
   echo "running: $1"
