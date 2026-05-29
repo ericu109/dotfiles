@@ -1,0 +1,55 @@
+#!/bin/bash
+
+runScript() {
+  echo "-----------"
+  echo "running: $1"
+  echo "-----------"
+
+  cd "$(dirname $1)"
+
+  /bin/bash "$1" "${@:2}"
+
+  exitCode=$?
+
+  exit $exitCode
+}
+
+if [[ $# -lt 1 ]]; then
+  echo "Usage: run [script name]"
+  exit 1
+fi
+
+scriptFoldersToLookFor=(".scripts" "scripts")
+extensionsToLookFor=(".sh")
+scriptName="$1"
+startingDirectory="$(pwd)"
+currentDirectory="$startingDirectory"
+homeDirectory="$HOME"
+
+while [[ "$currentDirectory" != "$homeDirectory" ]]; do
+
+  for scriptFolder in ${scriptFoldersToLookFor[@]}; do
+    scriptsDirectory="$currentDirectory/$scriptFolder"
+
+    if [[ -d "$scriptsDirectory" ]]; then
+      scriptLocation="$scriptsDirectory/$scriptName"
+      if [[ -f "$scriptLocation" ]]; then
+        runScript "$scriptLocation" "${@:2}"
+      fi
+
+      for extension in ${extensionsToLookFor[@]}; do
+        scriptLocation="$scriptsDirectory/$scriptName$extension"
+        if [[ -f "$scriptLocation" ]]; then
+          runScript "$scriptLocation" "${@:2}"
+        fi
+      done
+    fi
+  done
+
+  currentDirectory="$(dirname "$currentDirectory")"
+done
+
+
+echo "Could not find '$scriptName' in any scripts directory"
+exit 2
+
