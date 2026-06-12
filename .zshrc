@@ -127,6 +127,7 @@ alias vi='vim'
 alias vim='nvim'
 alias lg='lazygit'
 alias workon='. workon'
+alias k='kubectl'
 
 bindkey '^R' history-incremental-search-backward
 bindkey '^\b' backward-kill-word
