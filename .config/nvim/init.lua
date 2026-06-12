@@ -16,6 +16,7 @@ require('lsp.bash')
 require('lsp.docker')
 require('lsp.css_variables')
 require('lsp.lua')
+require('lsp.yaml')
 
 -- Completion Configurations
 require('comp')
