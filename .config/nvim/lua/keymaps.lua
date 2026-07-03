@@ -80,3 +80,57 @@ vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>:lua vim.diagnostic.open_float()
 -- diagnostic navigation
 vim.keymap.set('n', '<leader>nd', function() vim.diagnostic.goto_next() end)
 vim.keymap.set('n', '<leader>pd', function() vim.diagnostic.goto_prev() end)
+
+vim.keymap.set('v', '<leader>64e', function()
+  -- a position is [bufnum, line, col, off]
+  local startpos  = vim.fn.getpos(".")
+  local endpos    = vim.fn.getpos("v")
+  local start_row = startpos[2] - 1
+  local start_col = startpos[3] - 1
+  local end_row   = endpos[2] - 1
+  local end_col   = endpos[3] - 1
+
+  if start_row ~= end_row then
+    vim.notify("only works with a single line", vim.log.levels.WARN)
+    return
+  end
+
+  local selection = vim.fn.getregion(startpos, endpos)
+
+  local encoded   = vim.fn.system("base64 -w0", selection):gsub("[\r\n]+$", "") -- strip trailing newline
+
+  if start_row > end_row or (start_row == end_row and start_col > end_col) then
+    start_row, end_row = end_row, start_row
+    start_col, end_col = end_col, start_col
+  end
+
+  vim.api.nvim_buf_set_text(0, start_row, start_col, end_row, end_col + 1, { encoded })
+  vim.api.nvim_input("<esc>")
+end, { noremap = true, silent = true })
+
+vim.keymap.set('v', '<leader>64d', function()
+  -- a position is [bufnum, line, col, off]
+  local startpos  = vim.fn.getpos(".")
+  local endpos    = vim.fn.getpos("v")
+  local start_row = startpos[2] - 1
+  local start_col = startpos[3] - 1
+  local end_row   = endpos[2] - 1
+  local end_col   = endpos[3] - 1
+
+  if start_row ~= end_row then
+    vim.notify("only works with a single line", vim.log.levels.WARN)
+    return
+  end
+
+  local selection = vim.fn.getregion(startpos, endpos)
+
+  local decoded = vim.fn.system("base64 -d <<< " .. selection[1]):gsub("[\r\n]+$", "")
+
+  if start_row > end_row or (start_row == end_row and start_col > end_col) then
+    start_row, end_row = end_row, start_row
+    start_col, end_col = end_col, start_col
+  end
+
+  vim.api.nvim_buf_set_text(0, start_row, start_col, end_row, end_col + 1, { decoded })
+  vim.api.nvim_input("<esc>")
+end, { noremap = true, silent = true })
