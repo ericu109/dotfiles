@@ -158,7 +158,12 @@ require('packer').startup(function(use)
       'sindrets/diffview.nvim',
       'm00qek/baleia.nvim',
       'nvim-telescope/telescope.nvim'
-    }
+    },
+    config = function()
+      require('neogit').setup({
+        graph_style = 'kitty'
+      })
+    end
   }
 end)
 

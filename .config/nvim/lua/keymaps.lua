@@ -81,6 +81,8 @@ vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>:lua vim.diagnostic.open_float()
 vim.keymap.set('n', '<leader>nd', function() vim.diagnostic.goto_next() end)
 vim.keymap.set('n', '<leader>pd', function() vim.diagnostic.goto_prev() end)
 
+vim.keymap.set('n', '<leader>gg', '<cmd>Neogit<cr>', { desc = "Open Neogit" })
+
 vim.keymap.set('v', '<leader>64e', function()
   -- a position is [bufnum, line, col, off]
   local startpos  = vim.fn.getpos(".")
