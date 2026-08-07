@@ -1,24 +1,24 @@
-local group = vim.api.nvim_create_augroup('eric_group', {clear = true})
+local group = vim.api.nvim_create_augroup('eric_group', { clear = true })
 
 -- Highlight yanked text after yanking (came from lazyvim config: lazyvim/config/autocmds.lua)
 vim.api.nvim_create_autocmd("TextYankPost", {
   group = group,
   callback = function()
-    vim.hl.on_yank({timeout=600})
+    vim.hl.on_yank({ timeout = 600 })
   end,
 })
 
 -- Highlights other references to whatever is under the cursor
-vim.api.nvim_create_autocmd({'CursorHold'}, {
+vim.api.nvim_create_autocmd({ 'CursorHold' }, {
   group = group,
-  pattern = {'*.ts', '*.cs'},
+  pattern = { '*.ts', '*.cs' },
   callback = function()
     vim.lsp.buf.document_highlight()
   end
 })
-vim.api.nvim_create_autocmd({'CursorMoved'}, {
+vim.api.nvim_create_autocmd({ 'CursorMoved' }, {
   group = group,
-  pattern = {'*.ts', '*.cs'},
+  pattern = { '*.ts', '*.cs' },
   callback = function()
     vim.lsp.buf.clear_references()
   end
@@ -26,7 +26,7 @@ vim.api.nvim_create_autocmd({'CursorMoved'}, {
 
 
 -- Trim white space before save
-vim.api.nvim_create_autocmd({'BufWritePre'}, {
+vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
   group = group,
   pattern = '*',
   command = [[%s/\s\+$//e]]
@@ -34,7 +34,7 @@ vim.api.nvim_create_autocmd({'BufWritePre'}, {
 
 -- Close any netrw buffers when entering a new buffers
 -- Mostly this is to close netrw after selecting a file
-vim.api.nvim_create_autocmd({'BufEnter'}, {
+vim.api.nvim_create_autocmd({ 'BufEnter' }, {
   group = group,
   callback = function(ev)
     for _, buf_id in pairs(vim.api.nvim_list_bufs()) do
@@ -46,9 +46,9 @@ vim.api.nvim_create_autocmd({'BufEnter'}, {
 })
 
 -- Auto format on save
-vim.api.nvim_create_autocmd({'BufWritePre'}, {
+vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
   group = group,
-  pattern = {'*'},
+  pattern = { '*' },
   callback = function()
     format()
     vim.cmd.write()
@@ -77,12 +77,12 @@ function format()
     -- print('Formatted with Prettier')
     vim.cmd(':Prettier')
   else
-    vim.lsp.buf.format({async=false})
+    vim.lsp.buf.format({ async = false })
     -- print('Formatted with vim.lsp.buf.format')
   end
 end
 
-function has_value (tab, val)
+function has_value(tab, val)
   for index, value in ipairs(tab) do
     if value == val then
       return true
