@@ -151,6 +151,15 @@ require('packer').startup(function(use)
       end)
     end
   }
+
+  use {
+    'NeogitOrg/neogit',
+    requires = {
+      'sindrets/diffview.nvim',
+      'm00qek/baleia.nvim',
+      'nvim-telescope/telescope.nvim'
+    }
+  }
 end)
 
 require('telescope').setup({
