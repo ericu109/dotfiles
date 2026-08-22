@@ -161,6 +161,28 @@ require('packer').startup(function(use)
     },
     config = function()
       require('neogit').setup({
+        mappings = {
+          status = {
+            -- github/NeogitOrg/neogit/issues/520#issuecomment-4206443189
+            -- git add -N (intent-to-add): move untracked file to Unstaged so diffs are visible
+            ["N"] = function()
+              local status_buf = require("neogit.buffers.status").instance()
+
+              if not status_buf then
+                return
+              end
+
+              local item = status_buf.buffer.ui:get_item_under_cursor()
+              if not item or item.mode ~= "?" then
+                return
+              end
+
+              vim.fn.system({ "git", "add", "-N", "--", item.name })
+
+              status_buf:refresh(nil, "intent_to_add")
+            end,
+          },
+        },
         graph_style = 'kitty'
       })
     end
