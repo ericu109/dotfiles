@@ -82,6 +82,9 @@ button:hover {
 
 #workspaces .taskbar-window {
   margin-left: 3px;
+  background: transparent;
+  border: none;
+  padding: 3px;
 }
 
 #mode {
