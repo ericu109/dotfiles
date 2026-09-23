@@ -260,7 +260,7 @@ hl.bind(getKeys({ mainMod, 'r' }), hl.dsp.exec_cmd('rofi -show drun -show-icons'
 hl.bind(getKeys({ mainMod, 's' }), hl.dsp.exec_cmd('rofi -show window -show-icons'))
 
 -- screenshot
-hl.bind(getKeys({ mainMod, 'PRINT' }),
+hl.bind(getKeys({ 'CTRL', 'PRINT' }),
   hl.dsp.exec_cmd('grim -g "$(slurp)" -t ppm - | satty --filename - --floating-hack'))
 
 --- Move the given workspace to the active monitor and switch to it
