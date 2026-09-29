@@ -26,6 +26,10 @@ for i = 1, 26 do
   if workspaceName == 'm' then
     workspaces[i].monitor = 'HDMI-A-1'
   end
+
+  if workspaceName == 'k' then
+    workspaces[i].monitor = 'DP-2'
+  end
 end
 
 --- Get the workspace number based on the workspace's default_name
@@ -54,12 +58,14 @@ hl.window_rule({
   },
   workspace = getWorkspaceNumber('g')
 })
+
 hl.window_rule({
   match = {
     class = '.*steam.*'
   },
   workspace = getWorkspaceNumber('g')
 })
+
 hl.window_rule({
   match = {
     class = '.*signal.*'
@@ -73,12 +79,23 @@ hl.window_rule({
   },
   workspace = getWorkspaceNumber('m')
 })
+
 hl.window_rule({
   match = {
     class = '.*Thunderbird.*'
   },
   workspace = getWorkspaceNumber('m')
 })
+
+-- Open keepass's main window on the k workspace, but exclude the unlock modal, so it can open on the active workspace
+hl.window_rule({
+  match = {
+    class = 'org.keepassxc.KeePassXC',
+    title = "[^Unlock].*"
+  },
+  workspace = getWorkspaceNumber('k')
+})
+
 
 ------------------
 --- Auto start ---
@@ -97,6 +114,7 @@ hl.on('hyprland.start', function()
   hl.exec_cmd('steam')
   hl.exec_cmd('signal-desktop')
   hl.exec_cmd('discord')
+  hl.exec_cmd('keepassxc')
 end)
 
 -------------------
