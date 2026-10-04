@@ -93,9 +93,17 @@ hl.window_rule({
     class = 'org.keepassxc.KeePassXC',
     title = "[^Unlock].*"
   },
-  workspace = getWorkspaceNumber('k')
+  workspace = getWorkspaceNumber('k'),
 })
 
+-- keep keepass's unlock window focused, prevents accidentally entering master password somewhere else.
+hl.window_rule({
+  match = {
+    class = 'org.keepassxc.KeePassXC',
+    title = "Unlock.*"
+  },
+  stay_focused = true
+})
 
 ------------------
 --- Auto start ---
@@ -376,6 +384,7 @@ hl.window_rule({
   },
   opaque = true
 })
+
 -- float chrome as running UI tests can open chrome in a very small tile which will break stuff
 hl.window_rule({
   name = 'float chrome',
@@ -385,4 +394,13 @@ hl.window_rule({
   float = true,
   no_focus = true,
   focus_on_activate = false -- don't keep moving the mouse to chrome every time selenium does something to the window
+})
+
+-- same idea as keepass's unlock window except with elevation requests from hyprpolkitagent,
+-- keep it focused to avoid accidentally inputting password somewhere else.
+hl.window_rule({
+  match = {
+    class = 'hyprpolkitagent',
+  },
+  stay_focused = true
 })
