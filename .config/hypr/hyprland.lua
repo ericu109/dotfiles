@@ -376,3 +376,13 @@ hl.window_rule({
   },
   opaque = true
 })
+-- float chrome as running UI tests can open chrome in a very small tile which will break stuff
+hl.window_rule({
+  name = 'float chrome',
+  match = {
+    title = ".*Chromium"
+  },
+  float = true,
+  no_focus = true,
+  focus_on_activate = false -- don't keep moving the mouse to chrome every time selenium does something to the window
+})
