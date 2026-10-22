@@ -392,7 +392,6 @@ hl.window_rule({
     title = ".*Chromium"
   },
   float = true,
-  no_focus = true,
   focus_on_activate = false -- don't keep moving the mouse to chrome every time selenium does something to the window
 })
 
