@@ -26,9 +26,9 @@ gui:
       - "#db4b4b"
     defaultFgColor:
       - "#c0caf5"
-
 git:
   overrideGpg: true
-  pagers:
-    - pager: delta --dark --paging=never
-    - externalDiffCommand: difft --color=always --display=inline
+  diffRenderers:
+    - command: delta --dark --paging=never
+    - command: difft --color=always --display=inline
+      type: extDiff
