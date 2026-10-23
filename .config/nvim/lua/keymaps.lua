@@ -83,6 +83,14 @@ vim.keymap.set('n', '<leader>pd', function() vim.diagnostic.goto_prev() end)
 
 vim.keymap.set('n', '<leader>gg', '<cmd>Neogit<cr>', { desc = "Open Neogit" })
 
+-- remap macro recording to stop myself from going into recording mode all the damn time.
+vim.keymap.set({ 'n', 'v', 'o' }, 'q', '<Nop>', { silent = true })
+vim.keymap.set({ 'n', 'v', 'o' }, '<leader>rm', 'q', { remap = false })
+
+-- remap play macro into a similar key bind.
+vim.keymap.set({ 'n', 'v', 'o' }, '<leader>pm', '@', { remap = false })
+vim.keymap.set({ 'n', 'v', 'o' }, '@', '<nop>', { silent = true })
+
 vim.keymap.set('v', '<leader>64e', function()
   -- a position is [bufnum, line, col, off]
   local startpos  = vim.fn.getpos(".")
